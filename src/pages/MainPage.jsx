@@ -27,6 +27,7 @@ export const MainPage = () => {
       </section>
 
       <section className="main__bottom">
+        <Title>Итоговая информация по расчетной таблице</Title>
         <ul className="main__bottom__list">
           <li className="main__bottom__list__item">
             <InfoCard head="Начальная максимальная цена" info="300 000 ₽" />
