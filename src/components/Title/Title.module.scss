@@ -4,8 +4,10 @@
     padding: 15px;
     margin-top: 15px;
     background-color: $c-color-dark;
+    text-align: center;
 
     &__link {
+        display: block;
         color: $accent;
         text-transform: uppercase;
         font-size: 20px;
