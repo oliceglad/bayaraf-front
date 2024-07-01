@@ -1,0 +1,17 @@
+@import '../../utils/varialables.scss';
+
+.infoCard {
+    padding: 15px;
+    background-color: $c-color-dark;
+    margin-top: 15px;
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+
+
+    &__title {
+        font-weight:500;
+        margin-bottom: 20px;
+    }
+}

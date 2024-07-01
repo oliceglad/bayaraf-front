@@ -1,3 +1,5 @@
+@import '../../utils/varialables.scss';
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -5,7 +7,7 @@
     padding-bottom: 7.5px;
     padding-right: 15px;
     padding-left: 15px;
-    background-color: #2B2F38;
+    background-color: $c-color-dark;
 
 
     &__left {
