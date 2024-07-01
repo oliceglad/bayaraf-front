@@ -1,0 +1,18 @@
+@import "../../../utils/varialables.scss";
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: $c-color-dark;
+  margin-top: 15px;
+  color: $subtext-dark;
+
+  &__text {
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: right;
+    margin-right: 15px;
+  }
+}
