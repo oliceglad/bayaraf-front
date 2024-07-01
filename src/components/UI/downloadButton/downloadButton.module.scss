@@ -3,9 +3,9 @@
 .downloadButton {
   display: flex;
   align-items: center;
-  padding: 15px;
+  justify-content: center;
+  padding: 20px;
   background-color: $c-color-dark;
-  margin-top: 15px;
   color: $subtext-dark;
 
   &__text {
