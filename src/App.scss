@@ -4,6 +4,7 @@
   &__top {
     display: flex;
     width: 100%;
+    margin-bottom: 15px;
     &__left {
       min-width: 401px;
     }
@@ -13,6 +14,13 @@
       &__flex {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+
+      &__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        margin-top: 15px;
         gap: 15px;
       }
     }

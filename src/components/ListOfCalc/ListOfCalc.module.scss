@@ -1,11 +1,13 @@
 @import "../../utils/varialables.scss";
 
 .listOfCalc {
+  flex: 1;
   padding: 15px;
   background-color: $c-color-dark;
   margin-top: 15px;
   font-size: 14px;
   font-weight: 400;
+  height: calc(100% - 80px);
 
   &__list {
     color: white;

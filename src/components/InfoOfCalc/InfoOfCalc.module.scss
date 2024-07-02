@@ -10,10 +10,6 @@
   font-weight: 300;
   color: white;
 
-  &:not(:last-child) {
-    margin-right: 15px;
-  }
-
   &__list {
     &__item {
       &:not(:last-child) {

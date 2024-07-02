@@ -4,8 +4,18 @@ import { DownloadButton } from "../components/UI/downloadButton/downloadButton";
 import { ListOfCalc } from "../components/ListOfCalc/ListOfCalc";
 import { InfoOfCalc } from "../components/InfoOfCalc/InfoOfCalc";
 import { calcList, ordererList } from "../data/data";
+import { EditableInfo } from "../components/UI/editableInfo/EditableInfo";
+import { useState } from "react";
 
 export const MainPage = () => {
+  const [price, setPrice] = useState("300 000 ₽");
+  const [percentage, setPercentage] = useState("15 %");
+  const [resultPriceBuy, setResultPriceBuy] = useState("1 484 000 ₽");
+  const [resultPriceSell, setResultPriceSell] = useState("1 706 600 ₽");
+  const [spend, setSpend] = useState("50 000 ₽");
+  const [spendDelivery, setSpendDelivery] = useState("4 000 ₽");
+  const [delta, setDelta] = useState("168 600 ₽");
+
   return (
     <main className="main">
       <section className="main__top">
@@ -19,6 +29,42 @@ export const MainPage = () => {
             <InfoOfCalc infoList={calcList} />
             <InfoOfCalc infoList={ordererList} />
           </div>
+
+          <ul className="main__top__right__list">
+            <li className="main__top__right__list__item">
+              <InfoCard
+                head={"Начальная максимальная цена"}
+                info={<EditableInfo info={price} setInfo={setPrice} />}
+              />
+            </li>
+            <li className="main__top__right__list__item">
+              <InfoCard
+                head={"Наценочнная ставка"}
+                info={
+                  <EditableInfo info={percentage} setInfo={setPercentage} />
+                }
+              />
+            </li>
+            <li className="main__top__right__list__item">
+              <InfoCard
+                head={"Обеспечение заявки"}
+                info={<EditableInfo info={spend} setInfo={setSpend} />}
+              />
+            </li>
+            <li className="main__top__right__list__item">
+              <InfoCard
+                head={`Банковская гарантия`}
+                info={<EditableInfo info={spend} setInfo={setSpend} />}
+              />
+            </li>
+            <li className="main__top__right__list__item">
+              {" "}
+              <InfoCard
+                head={"Обеспечение договора"}
+                info={<EditableInfo info={spend} setInfo={setSpend} />}
+              />
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -30,25 +76,28 @@ export const MainPage = () => {
         <Title>Итоговая информация по расчетной таблице</Title>
         <ul className="main__bottom__list">
           <li className="main__bottom__list__item">
-            <InfoCard head="Начальная максимальная цена" info="300 000 ₽" />
+            <InfoCard head="Начальная максимальная цена" info={price} />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Начальная максимальная цена" info="300 000 ₽" />
+            <InfoCard head="Процентная наценочнная ставка" info={percentage} />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Начальная максимальная цена" info="300 000 ₽" />
+            <InfoCard head="Итоговая стоимость закупки" info={resultPriceBuy} />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Начальная максимальная цена" info="300 000 ₽" />
+            <InfoCard
+              head="Итоговая стоимость продажи"
+              info={resultPriceSell}
+            />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Начальная максимальная цена" info="300 000 ₽" />
+            <InfoCard head="Операционные расходы" info={spend} />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Начальная максимальная цена" info="300 000 ₽" />
+            <InfoCard head="Расходы на доставку" info={spendDelivery} />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Начальная максимальная цена" info="300 000 ₽" />
+            <InfoCard head="Дельта" info={delta} />
           </li>
           <li className="main__bottom__list__item">
             <DownloadButton />

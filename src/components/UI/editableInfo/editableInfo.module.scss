@@ -1,0 +1,23 @@
+.editableInfo {
+  &__info {
+    display: inline-block;
+    margin-right: 7px;
+    font-weight: 300;
+    font-size: 24px;
+    color: white;
+  }
+  &__input {
+    display: inline-block;
+    outline: none;
+    padding: 2;
+    margin-right: 7px;
+    font-size: 24px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+  }
+
+  &__button {
+    cursor: pointer;
+  }
+}
