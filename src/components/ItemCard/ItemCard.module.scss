@@ -1,0 +1,60 @@
+@import "../../utils/varialables.scss";
+
+.itemCard {
+    display: flex;
+    color: white;
+    width: fit-content;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: $c-color-dark;
+
+    &__img {
+        margin-right: 15px;
+    }
+
+    &__main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &__top {
+            font-size: 16px;
+        }
+
+        &__bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__price {
+                font-size: 24px;
+            }
+
+            &__buttons {
+                display: flex;
+                align-items: center;
+                &__add {
+                    display: inline-block;
+                    padding: 15px 35px;
+                    background-color: $accent;
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-right: 15px;
+                }
+
+                &__like {
+                    padding: 10px;
+                    background-color: #3B404D;
+                    &:hover, &:active, &:focus-visible {
+                        svg {
+                            path {
+                                stroke: red;
+                                fill: red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
