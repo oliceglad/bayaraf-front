@@ -6,6 +6,7 @@ import { InfoOfCalc } from "../components/InfoOfCalc/InfoOfCalc";
 import { calcList, ordererList } from "../data/data";
 import { EditableInfo } from "../components/UI/editableInfo/EditableInfo";
 import { useState } from "react";
+import { TableOfCalc } from "../components/TableOfCalc/TableOfCalc";
 
 export const MainPage = () => {
   const [price, setPrice] = useState("300 000 ₽");
@@ -33,13 +34,13 @@ export const MainPage = () => {
           <ul className="main__top__right__list">
             <li className="main__top__right__list__item">
               <InfoCard
-                head={"Начальная максимальная цена"}
+                head={<div>Начальная <br/> максимальная цена</div>}
                 info={<EditableInfo info={price} setInfo={setPrice} />}
               />
             </li>
             <li className="main__top__right__list__item">
               <InfoCard
-                head={"Наценочнная ставка"}
+                head={<div>Наценочная <br/> ставка</div>}
                 info={
                   <EditableInfo info={percentage} setInfo={setPercentage} />
                 }
@@ -47,20 +48,20 @@ export const MainPage = () => {
             </li>
             <li className="main__top__right__list__item">
               <InfoCard
-                head={"Обеспечение заявки"}
+                head={<div>Обеспечение <br/> заявки</div>}
                 info={<EditableInfo info={spend} setInfo={setSpend} />}
               />
             </li>
             <li className="main__top__right__list__item">
               <InfoCard
-                head={`Банковская гарантия`}
+                head={<div>Банковская <br/> гарантия</div>}
                 info={<EditableInfo info={spend} setInfo={setSpend} />}
               />
             </li>
             <li className="main__top__right__list__item">
               {" "}
               <InfoCard
-                head={"Обеспечение договора"}
+                head={<div>Обеспечение <br/> договора</div>}
                 info={<EditableInfo info={spend} setInfo={setSpend} />}
               />
             </li>
@@ -70,6 +71,8 @@ export const MainPage = () => {
 
       <section className="main__middle">
         <Title>Расчетная таблица тендерной сессии</Title>
+
+        <TableOfCalc />
       </section>
 
       <section className="main__bottom">

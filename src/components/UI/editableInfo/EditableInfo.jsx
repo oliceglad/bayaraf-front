@@ -1,7 +1,7 @@
 import { useState } from "react";
 import s from "./editableInfo.module.scss";
 
-export const EditableInfo = ({ info, setInfo }) => {
+export const EditableInfo = ({ info, setInfo, style }) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEditClick = () => {

@@ -1,0 +1,35 @@
+@import "../../utils/varialables.scss";
+.container {
+  background-color: $c-color-dark;
+  min-height: 224px;
+}
+
+.tableOfCalc {
+  width: 100%;
+  margin-top: 15px;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+
+  border-collapse: separate;
+  border-spacing: 0 1em;
+
+  & thead {
+    & th {
+      text-align: start;
+      vertical-align: top;
+
+      & span {
+        font-size: 12px;
+        color: $subtext-table;
+      }
+    }
+  }
+
+  & tbody {
+    & tr {
+      margin-top: 15px;
+      vertical-align: top;
+    }
+  }
+}
