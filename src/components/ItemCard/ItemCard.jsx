@@ -1,5 +1,6 @@
 import s from "./ItemCard.module.scss";
 import item from "../../assets/img/item.png";
+import { Button } from "../UI/Button/Button";
 
 export const ItemCard = ({ title, price }) => {
   return (
@@ -13,9 +14,9 @@ export const ItemCard = ({ title, price }) => {
           <span className={s.itemCard__main__bottom__price}>{price} ₽</span>
 
           <div className={s.itemCard__main__bottom__buttons}>
-            <a href="#" className={s.itemCard__main__bottom__buttons__add}>
+            <Button>
               Добавить в расчет
-            </a>
+            </Button>
 
             <a href="#" className={s.itemCard__main__bottom__buttons__like}>
               <svg
