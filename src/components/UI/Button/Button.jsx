@@ -1,8 +1,8 @@
 import s from './Button.module.scss'
 
-export const Button = ({children}) => {
+export const Button = ({children, style={}}) => {
   return (
-    <a href="#" className={s.Button}>
+    <a href="#" className={s.Button} style={{...style}}>
       {children}
     </a>
   );

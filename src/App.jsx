@@ -3,6 +3,7 @@ import "./App.scss";
 import { Header } from "./components/Header/Header";
 import { MainPage } from "./pages/MainPage";
 import { ItemsPage } from "./pages/ItemsPage";
+import { FilterPage } from "./pages/FilterPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/main" Component={MainPage} />
           <Route path="/items" Component={ItemsPage} />
+          <Route path="/filters" Component={FilterPage} />
           <Route path="*" element={<Navigate to="/main" />} />
         </Routes>
       </BrowserRouter>
