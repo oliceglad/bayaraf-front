@@ -8,8 +8,8 @@ import { FilterPage } from "./pages/FilterPage";
 function App() {
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/main" Component={MainPage} />
           <Route path="/items" Component={ItemsPage} />

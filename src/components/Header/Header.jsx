@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import s from "./Header.module.scss";
 
 export const Header = () => {
@@ -24,7 +25,7 @@ export const Header = () => {
           </svg>
         </a>
 
-        <a className={s.header__left__logo} href="">
+        <NavLink className={s.header__left__logo} to="/main">
           <svg
             width="156"
             height="15"
@@ -41,7 +42,7 @@ export const Header = () => {
               fill="#6F7580"
             />
           </svg>
-        </a>
+        </NavLink>
       </div>
 
       <nav className={s.header__right}>

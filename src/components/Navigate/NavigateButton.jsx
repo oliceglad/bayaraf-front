@@ -1,5 +1,6 @@
 import { useState } from "react";
 import s from "./Navigate.module.scss";
+import { navItems } from "../../data/data";
 
 export const NavigateButton = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -8,18 +9,6 @@ export const NavigateButton = () => {
     setActiveIndex(index);
   };
 
-  const navItems = [
-    "Основные",
-    "Рейтинг и обзоры",
-    "Общие параметры",
-    "Спецификации Видеопроцессора",
-    "Спецификации видеопамяти",
-    "Вывод изображения",
-    "Подключение",
-    "Система охлаждения",
-    "Дополнительно",
-    "Габариты и вес",
-  ];
 
   return (
     <nav className={s.navigate}>

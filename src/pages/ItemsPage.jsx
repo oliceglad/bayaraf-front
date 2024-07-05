@@ -1,14 +1,18 @@
+import { FilterButtons } from "../components/FilterButtons/FilterButtons";
 import { ItemCard } from "../components/ItemCard/ItemCard";
+import { items } from "../data/data";
 
 export const ItemsPage = () => {
   return (
-    <main className="items">
-      <section>
-        <ItemCard
-          title="Видеокарта KFA2 GeForce 210 [21GGF4HI00NK] [PCI-E 2.0 1 ГБ GDDR3, 64 бит, DVI-I, HDMI, VGA (D-Sub), GPU 520 МГц]"
-          price="2 980"
-        />
-      </section>
-    </main>
+    <section className="items">
+      <FilterButtons />
+      <ul className="items__list">
+        {items.map((el, key) => (
+          <li key={key}>
+            <ItemCard title={el.title} price={el.price} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
