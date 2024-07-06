@@ -20,6 +20,10 @@
 
       & span {
         margin-right: 15px;
+        & svg {
+          display: block;
+          transition: all .3s ease-in-out;
+        }
       }
     }
 
@@ -49,4 +53,9 @@
       margin-bottom: 10px;
     }
   }
+}
+
+
+.isOpened {
+  transform: rotate(180deg);
 }

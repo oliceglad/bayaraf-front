@@ -7,9 +7,6 @@ import { Input } from "../UI/Input/Input";
 export const FilterButtons = () => {
   const [openSections, setOpenSections] = useState({
     availability: false,
-    rating: false,
-    reliableModels: false,
-    hasReview: false,
     price: false,
     manufacturer: false,
     gpu: false,
@@ -36,6 +33,7 @@ export const FilterButtons = () => {
               height="15"
               viewBox="0 0 15 15"
               fill="none"
+              className={openSections.availability ? `${s.isOpened}` : ""}
               xmlns="http://www.w3.org/2000/svg"
             >
               <rect
@@ -119,6 +117,7 @@ export const FilterButtons = () => {
               height="15"
               viewBox="0 0 15 15"
               fill="none"
+              className={openSections.price ? `${s.isOpened}` : ""}
               xmlns="http://www.w3.org/2000/svg"
             >
               <rect
@@ -200,6 +199,7 @@ export const FilterButtons = () => {
               height="15"
               viewBox="0 0 15 15"
               fill="none"
+              className={openSections.manufacturer ? `${s.isOpened}` : ""}
               xmlns="http://www.w3.org/2000/svg"
             >
               <rect
@@ -271,6 +271,7 @@ export const FilterButtons = () => {
               height="15"
               viewBox="0 0 15 15"
               fill="none"
+              className={openSections.gpu ? `${s.isOpened}` : ""}
               xmlns="http://www.w3.org/2000/svg"
             >
               <rect
