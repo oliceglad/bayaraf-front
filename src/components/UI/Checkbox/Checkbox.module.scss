@@ -1,0 +1,42 @@
+@import "../../../utils/varialables.scss";
+
+.customCheckbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  input {
+    display: none;
+  }
+
+  &__box {
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border: 1px solid white;
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+
+  &__label {
+    font-size: 16px;
+  }
+
+  input:checked + &__box {
+    background-color: $accent;
+    border-color: $accent;
+
+    &::after {
+      content: "✔";
+      color: white;
+      font-size: 16px;
+    }
+  }
+}

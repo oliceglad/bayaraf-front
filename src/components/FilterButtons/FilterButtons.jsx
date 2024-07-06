@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import s from "./Filter.module.scss";
+import { FilterInput } from "../UI/filterInput/filterInput";
+import { Checkbox } from "../UI/Checkbox/Checkbox";
 
 export const FilterButtons = () => {
   const [openSections, setOpenSections] = useState({
@@ -22,6 +24,7 @@ export const FilterButtons = () => {
   return (
     <div className={s.filterButtons}>
       <div className={s.filterButtons__section}>
+        <FilterInput />
         <div
           className={s.filterButtons__section__header}
           onClick={() => toggleSection("availability")}
@@ -58,40 +61,49 @@ export const FilterButtons = () => {
         </div>
         {openSections.availability && (
           <div className={s.filterButtons__section__content}>
-            <label>
-              <input type="checkbox" /> В наличии
-            </label>
-            <label>
-              <input type="checkbox" /> Под заказ
-            </label>
-            <label>
-              <input type="checkbox" /> Транзит
-            </label>
+            <Checkbox label="В наличии" />
+            <Checkbox label="Под заказ" />
+            <Checkbox label="Транзит" />
           </div>
         )}
       </div>
 
       <div className={s.filterButtons__section}>
         <div className={s.filterButtons__section__content}>
-          <label>
-            <input type="checkbox" /> Рейтинг 4 и выше
-          </label>
+          <div style={{ display: "flex" }}>
+            <Checkbox
+              label="Рейтинг 4 и выше"
+              style={{ marginBottom: "0px" }}
+            />
+            <span className={s.filterButtons__section__content__info}>
+              (313)
+            </span>
+          </div>
         </div>
       </div>
 
       <div className={s.filterButtons__section}>
         <div className={s.filterButtons__section__content}>
           <label>
-            <input type="checkbox" /> Надежные модели
+            <Checkbox label="Надежные модели" style={{ marginBottom: "0px" }} />
+            <div
+              className={s.filterButtons__section__content__info}
+              style={{ marginLeft: "25px", fontSize: "12px" }}
+            >
+              минимум обращений в сервис
+            </div>
           </label>
         </div>
       </div>
 
       <div className={s.filterButtons__section}>
         <div className={s.filterButtons__section__content}>
-          <label>
-            <input type="checkbox" /> Есть обзор
-          </label>
+          <div style={{ display: "flex" }}>
+            <Checkbox label="Есть обзор" style={{ marginBottom: "0px" }} />
+            <span className={s.filterButtons__section__content__info}>
+              (92)
+            </span>
+          </div>
         </div>
       </div>
 
@@ -134,24 +146,42 @@ export const FilterButtons = () => {
           <div className={s.filterButtons__section__content}>
             <input type="number" placeholder="от" min="0" />
             <input type="number" placeholder="до" min="0" />
-            <label>
-              <input type="checkbox" /> Менее 7 000 ₽
-            </label>
-            <label>
-              <input type="checkbox" /> 7 001 - 10 000 ₽
-            </label>
-            <label>
-              <input type="checkbox" /> 10 001 - 16 000 ₽
-            </label>
-            <label>
-              <input type="checkbox" /> 16 001 - 31 000 ₽
-            </label>
-            <label>
-              <input type="checkbox" /> 31 001 - 49 000 ₽
-            </label>
-            <label>
-              <input type="checkbox" /> 49 001 и более
-            </label>
+            <div style={{ display: "flex", marginTop: "15px" }}>
+              <Checkbox label="Менее 7 000 ₽" />
+              <span className={s.filterButtons__section__content__info}>
+                (92)
+              </span>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Checkbox label="7 001 - 10 000 ₽" />
+              <span className={s.filterButtons__section__content__info}>
+                (17)
+              </span>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Checkbox label="10 001 - 16 000 ₽" />
+              <span className={s.filterButtons__section__content__info}>
+                (355)
+              </span>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Checkbox label="16 001 - 31 000 ₽" />
+              <span className={s.filterButtons__section__content__info}>
+                (355)
+              </span>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Checkbox label="31 001 - 49 000 ₽" />
+              <span className={s.filterButtons__section__content__info}>
+                (355)
+              </span>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Checkbox label="49 001 и более" />
+              <span className={s.filterButtons__section__content__info}>
+                (355)
+              </span>
+            </div>
           </div>
         )}
       </div>
@@ -247,9 +277,7 @@ export const FilterButtons = () => {
         </div>
         {openSections.gpu && (
           <div className={s.filterButtons__section__content}>
-            <label>
-              <input type="checkbox" /> Графический процессор
-            </label>
+            <Checkbox label="Графический процессор" />
           </div>
         )}
       </div>
