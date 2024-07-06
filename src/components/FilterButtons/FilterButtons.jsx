@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./Filter.module.scss";
 import { FilterInput } from "../UI/filterInput/filterInput";
 import { Checkbox } from "../UI/Checkbox/Checkbox";
+import { Input } from "../UI/Input/Input";
 
 export const FilterButtons = () => {
   const [openSections, setOpenSections] = useState({
@@ -144,8 +145,10 @@ export const FilterButtons = () => {
         </div>
         {openSections.price && (
           <div className={s.filterButtons__section__content}>
-            <input type="number" placeholder="от" min="0" />
-            <input type="number" placeholder="до" min="0" />
+            <div style={{ display: "flex" }}>
+              <Input type="number" placeholder="от 2899" min="0" />
+              <Input type="number" placeholder="до 300 000" min="0" />
+            </div>
             <div style={{ display: "flex", marginTop: "15px" }}>
               <Checkbox label="Менее 7 000 ₽" />
               <span className={s.filterButtons__section__content__info}>
@@ -223,19 +226,36 @@ export const FilterButtons = () => {
         </div>
         {openSections.manufacturer && (
           <div className={s.filterButtons__section__content}>
-            <input type="text" placeholder="Поиск" />
-            <label>
-              <input type="checkbox" /> Все производители
-            </label>
-            <label>
-              <input type="checkbox" /> Asrock
-            </label>
-            <label>
-              <input type="checkbox" /> ASUS
-            </label>
-            <label>
-              <input type="checkbox" /> GIGABYTE
-            </label>
+            <Input isSearch={true} placeholder="Поиск" type="text" />
+            <div
+              style={{
+                display: "flex",
+                paddingBottom: "10px",
+                borderBottom: "1px solid #6F7580",
+                marginTop: "15px",
+                marginBottom: "15px"
+              }}
+            >
+              <Checkbox label="Все производители" />
+            </div>
+            <div style={{ display: "flex" }}>
+              <Checkbox label="ASROCK" />
+              <span className={s.filterButtons__section__content__info}>
+                (355)
+              </span>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Checkbox label="ASUS" />
+              <span className={s.filterButtons__section__content__info}>
+                (355)
+              </span>
+            </div>
+            <div style={{ display: "flex" }}>
+              <Checkbox label="GIGABYTE" />
+              <span className={s.filterButtons__section__content__info}>
+                (355)
+              </span>
+            </div>
           </div>
         )}
       </div>

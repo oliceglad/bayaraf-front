@@ -1,0 +1,36 @@
+@import '../../../utils/varialables.scss';
+
+.inputWrapper {
+  width: 100%;
+  position: relative;
+  border: 1px solid $subtext-dark;
+  border-radius: 4px;
+  padding: 10px;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+.input {
+  display: block;
+  width: 100%;
+  min-width: 120px;
+  outline: hidden;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 0px !important;
+  margin-right: 0px !important;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  background-color: transparent;
+}
