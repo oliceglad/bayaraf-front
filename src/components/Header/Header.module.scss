@@ -1,34 +1,32 @@
-@import '../../utils/varialables.scss';
+@import "../../utils/varialables.scss";
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  &__left {
     display: flex;
-    justify-content: space-between;
-    padding-top: 7.5px;
-    padding-bottom: 7.5px;
-    padding-right: 15px;
-    padding-left: 15px;
-    background-color: $c-color-dark;
+    align-items: center;
 
-
-    &__left {
-        display: flex;
-        align-items: center;
-
-        &__logo {
-            margin-left: 15px;
-        }
+    &__logo {
+      margin-left: 15px;
     }
+  }
 
-    &__right {
-        &__list {
-            display: flex;
-            align-items: center;
+  &__right {
+    &__list {
+      display: flex;
+      align-items: center;
 
-            &__item {
-                &:not(:last-child) {
-                    margin-right: 15px;
-                }
-            }
+      &__item {
+        &:not(:last-child) {
+          margin-right: 15px;
         }
+      }
     }
+  }
 }

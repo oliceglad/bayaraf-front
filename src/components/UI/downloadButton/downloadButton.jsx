@@ -1,8 +1,8 @@
 import s from './downloadButton.module.scss'
 
-export const DownloadButton = () => {
+export const DownloadButton = ({theme}) => {
   return (
-    <a className={s.downloadButton} download href="../../../assets/img/download.svg">
+    <a className={`${s.downloadButton} ${theme}`} download href="../../../assets/img/download.svg">
       <div className={s.downloadButton__text}>
         Скачать файл <br/> расчета
       </div>

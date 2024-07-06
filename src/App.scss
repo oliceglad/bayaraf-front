@@ -1,4 +1,5 @@
 @import url("./utils/normalize.scss");
+@import './utils/varialables.scss';
 
 .main {
   &__top {
@@ -62,4 +63,23 @@
   &__right {
     width: 100%;
   }
+}
+
+.switch-theme-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+
+.dark {
+  background-color: $c-color-dark;
+  color: white;
+}
+
+.light {
+  background-color: $c-color-light;
+  color: $text-light;
 }

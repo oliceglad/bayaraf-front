@@ -1,3 +1,6 @@
+@import "varialables.scss";
+@import "theme.scss";
+
 *,
 *::before,
 *::after {
@@ -11,9 +14,17 @@ html,
 body {
   width: 100%;
   font-family: "Inter";
-  background-color: #1e1e1e;
+  background-color: $background;
   line-height: 1;
   -webkit-text-size-adjust: 100%;
+}
+
+body.light {
+  @include theme($background, white, $subtext-dark, $accent);
+}
+
+body.dark {
+  @include theme(#E6E8E6, $text-light, $subtext-light, $accent);
 }
 
 ul,

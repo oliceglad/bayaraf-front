@@ -1,6 +1,5 @@
 @import "../../utils/varialables.scss";
 .container {
-  background-color: $c-color-dark;
   min-height: 224px;
 }
 
@@ -8,7 +7,6 @@
   width: 100%;
   margin-top: 15px;
   padding: 15px;
-  color: white;
   font-size: 14px;
 
   overflow: scroll;

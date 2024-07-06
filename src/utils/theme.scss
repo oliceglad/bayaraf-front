@@ -1,0 +1,12 @@
+@mixin theme($background, $text, $subtext, $accent) {
+  background-color: $background;
+  color: $text;
+
+  .subtext {
+    color: $subtext;
+  }
+
+  .accent {
+    color: $accent;
+  }
+}

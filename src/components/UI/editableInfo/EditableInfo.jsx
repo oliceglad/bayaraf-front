@@ -1,7 +1,7 @@
 import { useState } from "react";
 import s from "./editableInfo.module.scss";
 
-export const EditableInfo = ({ info, setInfo, style }) => {
+export const EditableInfo = ({ info, setInfo, theme }) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEditClick = () => {
@@ -28,7 +28,7 @@ export const EditableInfo = ({ info, setInfo, style }) => {
     <div>
       {isEditing ? (
         <>
-          <input type="text" value={info} onChange={handleInputChange} className={s.editableInfo__input} onKeyDown={handleKeyDown}/>
+          <input type="text" value={info} onChange={handleInputChange} className={`${s.editableInfo__input} ${theme}`} onKeyDown={handleKeyDown}/>
           <span onClick={handleSaveClick} className={s.editableInfo__button}>
             <svg
               width="17"
@@ -50,7 +50,7 @@ export const EditableInfo = ({ info, setInfo, style }) => {
         </>
       ) : (
         <>
-          <div className={s.editableInfo__info}>{info}</div>
+          <div className={` ${s.editableInfo__info} ${theme}`}>{info}</div>
           <span onClick={handleEditClick} className={s.editableInfo__button}>
             <svg
               width="17"
