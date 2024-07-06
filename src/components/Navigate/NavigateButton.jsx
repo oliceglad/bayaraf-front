@@ -16,11 +16,11 @@ export const NavigateButton = () => {
         {navItems.map((item, index) => (
           <li key={index} className={s.navigate__list__item}>
             <a
-              href="#"
+              href={item.nav}
               className={index === activeIndex ? s.active : ""}
               onClick={() => handleClick(index)}
             >
-              {item}
+              {item.text}
             </a>
           </li>
         ))}

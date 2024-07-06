@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import s from "./Input.module.scss";
 
-export const Input = ({ type, isSearch, placeholder, min }) => {
+export const Input = ({ type, isSearch, placeholder, min, style={}}) => {
   return (
-    <div className={s.inputWrapper}>
+    <div className={s.inputWrapper} style={{...style}}>
       <input
         type={type}
         placeholder={placeholder}
