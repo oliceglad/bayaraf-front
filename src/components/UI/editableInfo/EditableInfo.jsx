@@ -1,7 +1,7 @@
 import { useState } from "react";
 import s from "./editableInfo.module.scss";
 
-export const EditableInfo = ({ info, setInfo, theme }) => {
+export const EditableInfo = ({ info, setInfo, theme, isSmall = false }) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEditClick = () => {
@@ -18,21 +18,33 @@ export const EditableInfo = ({ info, setInfo, theme }) => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleSaveClick();
     }
   };
-
 
   return (
     <div>
       {isEditing ? (
         <>
-          <input type="text" value={info} onChange={handleInputChange} className={`${s.editableInfo__input} ${theme}`} onKeyDown={handleKeyDown}/>
+          <input
+            type="text"
+            value={info}
+            onChange={handleInputChange}
+            className={`${s.editableInfo__input} ${theme}`}
+            onKeyDown={handleKeyDown}
+            style={
+              isSmall
+                ? { width: "60%", fontSize: "14px", borderColor: "black" }
+                : theme === "light"
+                ? { borderColor: "black" }
+                : {}
+            }
+          />
           <span onClick={handleSaveClick} className={s.editableInfo__button}>
             <svg
-              width="17"
-              height="17"
+              weight={isSmall ? "10px" : "17px"}
+              height={isSmall ? "10px" : "17px"}
               viewBox="0 0 17 17"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -50,11 +62,16 @@ export const EditableInfo = ({ info, setInfo, theme }) => {
         </>
       ) : (
         <>
-          <div className={` ${s.editableInfo__info} ${theme}`}>{info}</div>
+          <div
+            className={` ${s.editableInfo__info} ${theme}`}
+            style={isSmall ? { fontSize: "14px" } : {}}
+          >
+            {info}
+          </div>
           <span onClick={handleEditClick} className={s.editableInfo__button}>
             <svg
-              width="17"
-              height="17"
+              width={isSmall ? "10px" : "17px"}
+              height={isSmall ? "10px" : "17px"}
               viewBox="0 0 17 17"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
