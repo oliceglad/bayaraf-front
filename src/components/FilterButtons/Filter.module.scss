@@ -3,7 +3,6 @@
 .filterButtons {
   margin-top: 15px;
   background-color: transparent;
-  color: #ffffff;
   min-width: 350px;
   margin-right: 15px;
 
@@ -13,7 +12,6 @@
     &__header {
       display: flex;
       cursor: pointer;
-      background-color: $c-color-dark;
       padding: 15px;
       font-size: 16px;
       font-weight: 300;
@@ -28,13 +26,12 @@
     }
 
     &__content {
-      background-color: $c-color-dark;
       padding: 15px;
       max-width: 350px;
 
       &__info {
         margin-left: 3px;
-        color: $subtext-dark;
+        color: grey;
       }
     }
 

@@ -8,7 +8,6 @@
   margin-right: 15px;
 
   &__section {
-    background-color: $c-color-dark;
     padding: 15px;
     margin-bottom: 10px;
 
@@ -22,7 +21,6 @@
     &__header {
       display: flex;
       cursor: pointer;
-      background-color: $c-color-dark;
       padding: 15px;
       font-size: 16px;
       font-weight: 300;
@@ -37,7 +35,6 @@
     }
 
     &__content {
-      background-color: $c-color-dark;
       padding: 15px;
       max-width: 350px;
 

@@ -2,13 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import s from "./Input.module.scss";
 
-export const Input = ({ type, isSearch, placeholder, min, style={}}) => {
+export const Input = ({
+  type,
+  isSearch,
+  placeholder,
+  min,
+  style = {},
+  theme,
+}) => {
   return (
-    <div className={s.inputWrapper} style={{...style}}>
+    <div className={s.inputWrapper} style={{ ...style }}>
       <input
         type={type}
         placeholder={placeholder}
-        className={s.input}
+        className={`${s.input} ${theme}`}
         {...(type === "number" ? { min } : {})}
       />
       {isSearch && (
@@ -22,7 +29,7 @@ export const Input = ({ type, isSearch, placeholder, min, style={}}) => {
           >
             <path
               d="M17 17L21 21M19.6667 10.3333C19.6667 15.488 15.488 19.6667 10.3333 19.6667C5.17868 19.6667 1 15.488 1 10.3333C1 5.17868 5.17868 1 10.3333 1C15.488 1 19.6667 5.17868 19.6667 10.3333Z"
-              stroke="white"
+              stroke={theme === "light" ? "black" : "white"}
             />
           </svg>
         </button>

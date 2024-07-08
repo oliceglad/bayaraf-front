@@ -18,16 +18,13 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header theme={theme} />
+        <Header theme={theme} handleThemeToggle={handleThemeToggle}/>
         <Routes>
           <Route path="/main" element={<MainPage theme={theme} />} />
           <Route path="/items" element={<ItemsPage theme={theme} />} />
           <Route path="/filters" element={<FilterPage theme={theme} />} />
           <Route path="*" element={<Navigate to="/main" />} />
         </Routes>
-        <button onClick={handleThemeToggle} className="switch-theme-button">
-          Switch toTheme
-        </button>
       </BrowserRouter>
     </>
   );

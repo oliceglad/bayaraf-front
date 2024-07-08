@@ -4,7 +4,7 @@ import { FilterInput } from "../UI/filterInput/filterInput";
 import { Checkbox } from "../UI/Checkbox/Checkbox";
 import { Input } from "../UI/Input/Input";
 
-export const UltimateFilter = () => {
+export const UltimateFilter = ({ theme }) => {
   const [openSections, setOpenSections] = useState({
     availability: false,
     price: false,
@@ -30,20 +30,21 @@ export const UltimateFilter = () => {
 
   return (
     <div className={s.filterButtons}>
-      <div className={s.filterButtons__section}>
+      <div className={`${s.filterButtons__section} ${theme}`}>
         <h3 id="main">Основные</h3>
         <Input
           isSearch={true}
           type="text"
           placeholder="Поиск по категориям"
           style={{ maxWidth: "300px" }}
+          theme={theme}
         />
         <div style={{ display: "flex" }}>
           <ul className={s.filterButtons__section__list__left}>
             <li>
               {" "}
               <div
-                className={s.filterButtons__section__header}
+                className={`${s.filterButtons__section__header} ${theme}`}
                 onClick={() => toggleSection("availability")}
               >
                 <span>
@@ -62,7 +63,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -71,7 +72,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -84,17 +85,19 @@ export const UltimateFilter = () => {
                 )}
               </div>
               {openSections.availability && (
-                <div className={s.filterButtons__section__content}>
-                  <Checkbox label="В наличии" />
-                  <Checkbox label="Под заказ" />
-                  <Checkbox label="Транзит" />
+                <div
+                  className={`${s.filterButtons__section__content} ${theme}`}
+                >
+                  <Checkbox label="В наличии" theme={theme} />
+                  <Checkbox label="Под заказ" theme={theme} />
+                  <Checkbox label="Транзит" theme={theme} />
                 </div>
               )}
             </li>
             <li>
               {" "}
               <div
-                className={s.filterButtons__section__header}
+                className={`${s.filterButtons__section__header} ${theme}`}
                 onClick={() => toggleSection("price")}
               >
                 <span>
@@ -113,7 +116,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -122,7 +125,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -133,43 +136,55 @@ export const UltimateFilter = () => {
                 )}
               </div>
               {openSections.price && (
-                <div className={s.filterButtons__section__content}>
+                <div
+                  className={`${s.filterButtons__section__content} ${theme}`}
+                >
                   <div style={{ display: "flex" }}>
-                    <Input type="number" placeholder="от 2899" min="0" />
-                    <Input type="number" placeholder="до 300 000" min="0" />
+                    <Input
+                      type="number"
+                      placeholder="от 2899"
+                      min="0"
+                      theme={theme}
+                    />
+                    <Input
+                      type="number"
+                      placeholder="до 300 000"
+                      min="0"
+                      theme={theme}
+                    />
                   </div>
                   <div style={{ display: "flex", marginTop: "15px" }}>
-                    <Checkbox label="Менее 7 000 ₽" />
+                    <Checkbox label="Менее 7 000 ₽" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (92)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="7 001 - 10 000 ₽" />
+                    <Checkbox label="7 001 - 10 000 ₽" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (17)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="10 001 - 16 000 ₽" />
+                    <Checkbox label="10 001 - 16 000 ₽" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="16 001 - 31 000 ₽" />
+                    <Checkbox label="16 001 - 31 000 ₽" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="31 001 - 49 000 ₽" />
+                    <Checkbox label="31 001 - 49 000 ₽" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="49 001 и более" />
+                    <Checkbox label="49 001 и более" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
@@ -182,7 +197,7 @@ export const UltimateFilter = () => {
             <li>
               {" "}
               <div
-                className={s.filterButtons__section__header}
+                className={`${s.filterButtons__section__header} ${theme}`}
                 onClick={() => toggleSection("manufacturer")}
               >
                 <span>
@@ -201,7 +216,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -210,7 +225,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -221,8 +236,15 @@ export const UltimateFilter = () => {
                 )}
               </div>
               {openSections.manufacturer && (
-                <div className={s.filterButtons__section__content}>
-                  <Input isSearch={true} placeholder="Поиск" type="text" />
+                <div
+                  className={`${s.filterButtons__section__content} ${theme}`}
+                >
+                  <Input
+                    isSearch={true}
+                    placeholder="Поиск"
+                    type="text"
+                    theme={theme}
+                  />
                   <div
                     style={{
                       display: "flex",
@@ -232,22 +254,22 @@ export const UltimateFilter = () => {
                       marginBottom: "15px",
                     }}
                   >
-                    <Checkbox label="Все производители" />
+                    <Checkbox label="Все производители" theme={theme} />
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="ASROCK" />
+                    <Checkbox label="ASROCK" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="ASUS" />
+                    <Checkbox label="ASUS" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="GIGABYTE" />
+                    <Checkbox label="GIGABYTE" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
@@ -258,7 +280,7 @@ export const UltimateFilter = () => {
             <li>
               {" "}
               <div
-                className={s.filterButtons__section__header}
+                className={`${s.filterButtons__section__header} ${theme}`}
                 onClick={() => toggleSection("factory")}
               >
                 <span>
@@ -277,7 +299,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -286,7 +308,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -297,21 +319,23 @@ export const UltimateFilter = () => {
                 )}
               </div>
               {openSections.factory && (
-                <div className={s.filterButtons__section__content}>
+                <div
+                  className={`${s.filterButtons__section__content} ${theme}`}
+                >
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="1 год" />
+                    <Checkbox label="1 год" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="2 года" />
+                    <Checkbox label="2 года" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="3 года" />
+                    <Checkbox label="3 года" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
@@ -322,7 +346,7 @@ export const UltimateFilter = () => {
           </ul>
         </div>
       </div>
-      <div className={s.filterButtons__section}>
+      <div className={`${s.filterButtons__section} ${theme}`}>
         <h3 id="info">Общие параметры</h3>
         <div style={{ display: "flex" }}>
           <ul className={s.filterButtons__section__list__left}>
@@ -348,7 +372,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -357,7 +381,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -370,19 +394,25 @@ export const UltimateFilter = () => {
               {openSections.assign && (
                 <div className={s.filterButtons__section__content}>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="игровая видеокарта" />
+                    <Checkbox label="игровая видеокарта" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="видеокарта для дома и офиса" />
+                    <Checkbox
+                      label="видеокарта для дома и офиса"
+                      theme={theme}
+                    />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="профессиональная видеокарта" />
+                    <Checkbox
+                      label="профессиональная видеокарта"
+                      theme={theme}
+                    />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
@@ -412,7 +442,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -421,7 +451,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -434,37 +464,37 @@ export const UltimateFilter = () => {
               {openSections.color && (
                 <div className={s.filterButtons__section__content}>
                   <div style={{ display: "flex", marginTop: "15px" }}>
-                    <Checkbox label="белый" />
+                    <Checkbox label="белый" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (92)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="золотой" />
+                    <Checkbox label="золотой" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (17)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="красный" />
+                    <Checkbox label="красный" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="розовый" />
+                    <Checkbox label="розовый" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="серебристый" />
+                    <Checkbox label="серебристый" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="серый" />
+                    <Checkbox label="серый" theme={theme} />
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
@@ -496,7 +526,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -505,7 +535,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -518,13 +548,13 @@ export const UltimateFilter = () => {
               {openSections.lhr && (
                 <div className={s.filterButtons__section__content}>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="есть" />
+                    <Checkbox label="есть" theme={theme}/>
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="нет" />
+                    <Checkbox label="нет" theme={theme}/>
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
@@ -554,7 +584,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -563,7 +593,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -576,7 +606,7 @@ export const UltimateFilter = () => {
               {openSections.type && (
                 <div className={s.filterButtons__section__content}>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="видеокарта" />
+                    <Checkbox label="видеокарта" theme={theme}/>
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
@@ -587,7 +617,7 @@ export const UltimateFilter = () => {
           </ul>
         </div>
       </div>
-      <div className={s.filterButtons__section}>
+      <div className={`${s.filterButtons__section} ${theme}`}>
         <h3 id="spec">Спецификации видеопроцессора</h3>
         <div style={{ display: "flex" }}>
           <ul className={s.filterButtons__section__list__left}>
@@ -613,7 +643,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -622,7 +652,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -637,7 +667,7 @@ export const UltimateFilter = () => {
               {openSections.gpu && (
                 <div className={s.filterButtons__section__content}>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="игровая видеокарта" />
+                    <Checkbox label="игровая видеокарта" theme={theme}/>
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
@@ -667,7 +697,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -676,7 +706,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -693,7 +723,7 @@ export const UltimateFilter = () => {
               {openSections.effectGpu && (
                 <div className={s.filterButtons__section__content}>
                   <div style={{ display: "flex", marginTop: "15px" }}>
-                    <Checkbox label="белый" />
+                    <Checkbox label="белый" theme={theme}/>
                     <span className={s.filterButtons__section__content__info}>
                       (92)
                     </span>
@@ -723,7 +753,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -732,7 +762,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -747,7 +777,7 @@ export const UltimateFilter = () => {
               {openSections.itemsGpu && (
                 <div className={s.filterButtons__section__content}>
                   <div style={{ display: "flex", marginTop: "15px" }}>
-                    <Checkbox label="белый" />
+                    <Checkbox label="белый" theme={theme}/>
                     <span className={s.filterButtons__section__content__info}>
                       (92)
                     </span>
@@ -779,7 +809,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -788,7 +818,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -801,13 +831,13 @@ export const UltimateFilter = () => {
               {openSections.tech && (
                 <div className={s.filterButtons__section__content}>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="есть" />
+                    <Checkbox label="есть" theme={theme}/>
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
                   </div>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="нет" />
+                    <Checkbox label="нет" theme={theme}/>
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>
@@ -837,7 +867,7 @@ export const UltimateFilter = () => {
                       height="10"
                       rx="1"
                       transform="rotate(135 14.571 10.3284)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                     <rect
                       x="8.91431"
@@ -846,7 +876,7 @@ export const UltimateFilter = () => {
                       height="2"
                       rx="1"
                       transform="rotate(135 8.91431 4.67163)"
-                      fill="white"
+                      fill={theme === "light" ? "black" : "white"}
                     />
                   </svg>
                 </span>
@@ -859,7 +889,7 @@ export const UltimateFilter = () => {
               {openSections.archi && (
                 <div className={s.filterButtons__section__content}>
                   <div style={{ display: "flex" }}>
-                    <Checkbox label="1 год" />
+                    <Checkbox label="1 год" theme={theme}/>
                     <span className={s.filterButtons__section__content__info}>
                       (355)
                     </span>

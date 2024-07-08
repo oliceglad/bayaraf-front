@@ -4,7 +4,7 @@ import { FilterInput } from "../UI/filterInput/filterInput";
 import { Checkbox } from "../UI/Checkbox/Checkbox";
 import { Input } from "../UI/Input/Input";
 
-export const FilterButtons = () => {
+export const FilterButtons = ({ theme }) => {
   const [openSections, setOpenSections] = useState({
     availability: false,
     price: false,
@@ -20,11 +20,11 @@ export const FilterButtons = () => {
   };
 
   return (
-    <div className={s.filterButtons}>
+    <div className={`${s.filterButtons} ${theme}`}>
       <div className={s.filterButtons__section}>
-        <FilterInput />
+        <FilterInput theme={theme} />
         <div
-          className={s.filterButtons__section__header}
+          className={`${s.filterButtons__section__header} ${theme}`}
           onClick={() => toggleSection("availability")}
         >
           <span>
@@ -43,7 +43,7 @@ export const FilterButtons = () => {
                 height="10"
                 rx="1"
                 transform="rotate(135 14.571 10.3284)"
-                fill="white"
+                fill={theme === "light" ? "black" : "white"}
               />
               <rect
                 x="8.91431"
@@ -52,27 +52,28 @@ export const FilterButtons = () => {
                 height="2"
                 rx="1"
                 transform="rotate(135 8.91431 4.67163)"
-                fill="white"
+                fill={theme === "light" ? "black" : "white"}
               />
             </svg>
           </span>
           Наличие в магазинах
         </div>
         {openSections.availability && (
-          <div className={s.filterButtons__section__content}>
-            <Checkbox label="В наличии" />
-            <Checkbox label="Под заказ" />
-            <Checkbox label="Транзит" />
+          <div className={`${s.filterButtons__section__content} ${theme}`}>
+            <Checkbox label="В наличии" theme={theme} />
+            <Checkbox label="Под заказ" theme={theme} />
+            <Checkbox label="Транзит" theme={theme} />
           </div>
         )}
       </div>
 
       <div className={s.filterButtons__section}>
-        <div className={s.filterButtons__section__content}>
+        <div className={`${s.filterButtons__section__content} ${theme}`}>
           <div style={{ display: "flex" }}>
             <Checkbox
               label="Рейтинг 4 и выше"
               style={{ marginBottom: "0px" }}
+              theme={theme}
             />
             <span className={s.filterButtons__section__content__info}>
               (313)
@@ -82,9 +83,13 @@ export const FilterButtons = () => {
       </div>
 
       <div className={s.filterButtons__section}>
-        <div className={s.filterButtons__section__content}>
+        <div className={`${s.filterButtons__section__content} ${theme}`}>
           <label>
-            <Checkbox label="Надежные модели" style={{ marginBottom: "0px" }} />
+            <Checkbox
+              label="Надежные модели"
+              style={{ marginBottom: "0px" }}
+              theme={theme}
+            />
             <div
               className={s.filterButtons__section__content__info}
               style={{ marginLeft: "25px", fontSize: "12px" }}
@@ -96,9 +101,13 @@ export const FilterButtons = () => {
       </div>
 
       <div className={s.filterButtons__section}>
-        <div className={s.filterButtons__section__content}>
+        <div className={`${s.filterButtons__section__content} ${theme}`}>
           <div style={{ display: "flex" }}>
-            <Checkbox label="Есть обзор" style={{ marginBottom: "0px" }} />
+            <Checkbox
+              label="Есть обзор"
+              style={{ marginBottom: "0px" }}
+              theme={theme}
+            />
             <span className={s.filterButtons__section__content__info}>
               (92)
             </span>
@@ -108,7 +117,7 @@ export const FilterButtons = () => {
 
       <div className={s.filterButtons__section}>
         <div
-          className={s.filterButtons__section__header}
+          className={`${s.filterButtons__section__header} ${theme}`}
           onClick={() => toggleSection("price")}
         >
           <span>
@@ -127,7 +136,7 @@ export const FilterButtons = () => {
                 height="10"
                 rx="1"
                 transform="rotate(135 14.571 10.3284)"
-                fill="white"
+                fill={theme === "light" ? "black" : "white"}
               />
               <rect
                 x="8.91431"
@@ -136,50 +145,60 @@ export const FilterButtons = () => {
                 height="2"
                 rx="1"
                 transform="rotate(135 8.91431 4.67163)"
-                fill="white"
+                fill={theme === "light" ? "black" : "white"}
               />
             </svg>
           </span>
           Цена
         </div>
         {openSections.price && (
-          <div className={s.filterButtons__section__content}>
+          <div className={`${s.filterButtons__section__content} ${theme}`}>
             <div style={{ display: "flex" }}>
-              <Input type="number" placeholder="от 2899" min="0" />
-              <Input type="number" placeholder="до 300 000" min="0" />
+              <Input
+                type="number"
+                placeholder="от 2899"
+                min="0"
+                theme={theme}
+              />
+              <Input
+                type="number"
+                placeholder="до 300 000"
+                min="0"
+                theme={theme}
+              />
             </div>
             <div style={{ display: "flex", marginTop: "15px" }}>
-              <Checkbox label="Менее 7 000 ₽" />
+              <Checkbox label="Менее 7 000 ₽" theme={theme} />
               <span className={s.filterButtons__section__content__info}>
                 (92)
               </span>
             </div>
             <div style={{ display: "flex" }}>
-              <Checkbox label="7 001 - 10 000 ₽" />
+              <Checkbox label="7 001 - 10 000 ₽" theme={theme} />
               <span className={s.filterButtons__section__content__info}>
                 (17)
               </span>
             </div>
             <div style={{ display: "flex" }}>
-              <Checkbox label="10 001 - 16 000 ₽" />
+              <Checkbox label="10 001 - 16 000 ₽" theme={theme} />
               <span className={s.filterButtons__section__content__info}>
                 (355)
               </span>
             </div>
             <div style={{ display: "flex" }}>
-              <Checkbox label="16 001 - 31 000 ₽" />
+              <Checkbox label="16 001 - 31 000 ₽" theme={theme} />
               <span className={s.filterButtons__section__content__info}>
                 (355)
               </span>
             </div>
             <div style={{ display: "flex" }}>
-              <Checkbox label="31 001 - 49 000 ₽" />
+              <Checkbox label="31 001 - 49 000 ₽" theme={theme} />
               <span className={s.filterButtons__section__content__info}>
                 (355)
               </span>
             </div>
             <div style={{ display: "flex" }}>
-              <Checkbox label="49 001 и более" />
+              <Checkbox label="49 001 и более" theme={theme} />
               <span className={s.filterButtons__section__content__info}>
                 (355)
               </span>
@@ -190,7 +209,7 @@ export const FilterButtons = () => {
 
       <div className={s.filterButtons__section}>
         <div
-          className={s.filterButtons__section__header}
+          className={`${s.filterButtons__section__header} ${theme}`}
           onClick={() => toggleSection("manufacturer")}
         >
           <span>
@@ -209,7 +228,7 @@ export const FilterButtons = () => {
                 height="10"
                 rx="1"
                 transform="rotate(135 14.571 10.3284)"
-                fill="white"
+                fill={theme === "light" ? "black" : "white"}
               />
               <rect
                 x="8.91431"
@@ -218,40 +237,45 @@ export const FilterButtons = () => {
                 height="2"
                 rx="1"
                 transform="rotate(135 8.91431 4.67163)"
-                fill="white"
+                fill={theme === "light" ? "black" : "white"}
               />
             </svg>
           </span>
           Производитель
         </div>
         {openSections.manufacturer && (
-          <div className={s.filterButtons__section__content}>
-            <Input isSearch={true} placeholder="Поиск" type="text" />
+          <div className={`${s.filterButtons__section__content} ${theme}`}>
+            <Input
+              isSearch={true}
+              placeholder="Поиск"
+              type="text"
+              theme={theme}
+            />
             <div
               style={{
                 display: "flex",
                 paddingBottom: "10px",
                 borderBottom: "1px solid #6F7580",
                 marginTop: "15px",
-                marginBottom: "15px"
+                marginBottom: "15px",
               }}
             >
-              <Checkbox label="Все производители" />
+              <Checkbox label="Все производители" theme={theme} />
             </div>
             <div style={{ display: "flex" }}>
-              <Checkbox label="ASROCK" />
+              <Checkbox label="ASROCK" theme={theme} />
               <span className={s.filterButtons__section__content__info}>
                 (355)
               </span>
             </div>
             <div style={{ display: "flex" }}>
-              <Checkbox label="ASUS" />
+              <Checkbox label="ASUS" theme={theme} />
               <span className={s.filterButtons__section__content__info}>
                 (355)
               </span>
             </div>
             <div style={{ display: "flex" }}>
-              <Checkbox label="GIGABYTE" />
+              <Checkbox label="GIGABYTE" theme={theme} />
               <span className={s.filterButtons__section__content__info}>
                 (355)
               </span>
@@ -262,7 +286,7 @@ export const FilterButtons = () => {
 
       <div className={s.filterButtons__section}>
         <div
-          className={s.filterButtons__section__header}
+          className={`${s.filterButtons__section__header} ${theme}`}
           onClick={() => toggleSection("gpu")}
         >
           <span>
@@ -281,7 +305,7 @@ export const FilterButtons = () => {
                 height="10"
                 rx="1"
                 transform="rotate(135 14.571 10.3284)"
-                fill="white"
+                fill={theme === "light" ? "black" : "white"}
               />
               <rect
                 x="8.91431"
@@ -290,15 +314,15 @@ export const FilterButtons = () => {
                 height="2"
                 rx="1"
                 transform="rotate(135 8.91431 4.67163)"
-                fill="white"
+                fill={theme === "light" ? "black" : "white"}
               />
             </svg>
           </span>
           Графический процессор
         </div>
         {openSections.gpu && (
-          <div className={s.filterButtons__section__content}>
-            <Checkbox label="Графический процессор" />
+          <div className={`${s.filterButtons__section__content} ${theme}`}>
+            <Checkbox label="Графический процессор" theme={theme} />
           </div>
         )}
       </div>

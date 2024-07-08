@@ -2,12 +2,10 @@
 
 .itemCard {
   display: flex;
-  color: white;
   width: fit-content;
   width: 100%;
   margin-top: 15px;
   padding: 15px;
-  background-color: $c-color-dark;
 
   &__img {
     margin-right: 15px;
@@ -37,7 +35,6 @@
 
         &__like {
           padding: 10px;
-          background-color: #3b404d;
           &:hover,
           &:active,
           &:focus-visible {
@@ -63,16 +60,11 @@
   }
 }
 
-.addedButton {
-    background-color: #3B404C !important;
-}
-
 .dropdownMenu {
   position: absolute;
   max-width: 245px;
   top: 100%;
   left: 0;
-  background: $c-color-dark;
   z-index: 1000;
 }
 

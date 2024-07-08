@@ -2,7 +2,7 @@ import { useState } from "react";
 import s from "./Navigate.module.scss";
 import { navItems } from "../../data/data";
 
-export const NavigateButton = () => {
+export const NavigateButton = ({theme}) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleClick = (index) => {
@@ -11,7 +11,7 @@ export const NavigateButton = () => {
 
 
   return (
-    <nav className={s.navigate}>
+    <nav className={`${s.navigate} ${theme}`}>
       <ul className={s.navigate__list}>
         {navItems.map((item, index) => (
           <li key={index} className={s.navigate__list__item}>
