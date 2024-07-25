@@ -12,10 +12,10 @@ export const TableOfCalc = ({ theme }) => {
       <table className={s.tableOfCalc}>
         <thead>
           <tr>
-            <th>№</th>
+            <th style={{ width: "45px", textAlign: "center" }}>№</th>
             <th>НАИМЕНОВАНИЕ</th>
-            <th>МОДЕЛЬ</th>
-            <th>АРТИКУЛ</th>
+            <th style={{ width: "150px" }}>МОДЕЛЬ</th>
+            <th style={{textAlign: "center"}}>АРТИКУЛ</th>
             <th>ПОСТАВЩИК</th>
             <th>КОЛ-ВО</th>
             <th>
@@ -23,7 +23,7 @@ export const TableOfCalc = ({ theme }) => {
               <br />
               <span>ДОСТАВКИ</span>
             </th>
-            <th>
+            <th >
               СРОК <br /> <span>ПОСТАВКИ</span>
             </th>
             <th>
@@ -53,12 +53,12 @@ export const TableOfCalc = ({ theme }) => {
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
+            <td style={{textAlign: "center" }}>1</td>
             <td>Видеокарта</td>
-            <td>GTX 1080</td>
-            <td>108039</td>
+            <td>GeForce RTX 3050 GAMING 6G</td>
+            <td style={{ textAlign: "center" }}>108039</td>
             <td>KNS</td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={count}
                 setInfo={setCount}
@@ -67,7 +67,7 @@ export const TableOfCalc = ({ theme }) => {
               />
             </td>
             <td>1 000 ₽</td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={time}
                 setInfo={setTime}
@@ -75,7 +75,7 @@ export const TableOfCalc = ({ theme }) => {
                 theme={theme}
               />
             </td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={time}
                 setInfo={setTime}
@@ -83,7 +83,7 @@ export const TableOfCalc = ({ theme }) => {
                 theme={theme}
               />
             </td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={time}
                 setInfo={setTime}
@@ -92,7 +92,7 @@ export const TableOfCalc = ({ theme }) => {
               />
             </td>
             <td>20 000 ₽</td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={price}
                 setInfo={setPrice}
@@ -145,12 +145,12 @@ export const TableOfCalc = ({ theme }) => {
             </td>
           </tr>
           <tr>
-            <td>2</td>
+            <td style={{textAlign: "center" }}>2</td>
             <td>Видеокарта</td>
             <td>RTX 3050</td>
-            <td>442412</td>
+            <td style={{ textAlign: "center" }}>442412</td>
             <td>OCS</td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={count}
                 setInfo={setCount}
@@ -159,7 +159,7 @@ export const TableOfCalc = ({ theme }) => {
               />
             </td>
             <td>3 000 ₽</td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={time}
                 setInfo={setTime}
@@ -167,7 +167,7 @@ export const TableOfCalc = ({ theme }) => {
                 theme={theme}
               />
             </td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={time}
                 setInfo={setTime}
@@ -175,7 +175,7 @@ export const TableOfCalc = ({ theme }) => {
                 theme={theme}
               />
             </td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={time}
                 setInfo={setTime}
@@ -184,7 +184,7 @@ export const TableOfCalc = ({ theme }) => {
               />
             </td>
             <td>35 000 ₽</td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={price}
                 setInfo={setPrice}
@@ -237,12 +237,12 @@ export const TableOfCalc = ({ theme }) => {
             </td>
           </tr>
           <tr>
-            <td>3</td>
+            <td style={{textAlign: "center" }}>3</td>
             <td>Видеокарта</td>
             <td>RX 970</td>
-            <td>122221</td>
+            <td style={{ textAlign: "center" }}>122221</td>
             <td>TREOLAN</td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={count}
                 setInfo={setCount}
@@ -251,7 +251,7 @@ export const TableOfCalc = ({ theme }) => {
               />
             </td>
             <td>0 ₽</td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={time}
                 setInfo={setTime}
@@ -259,7 +259,7 @@ export const TableOfCalc = ({ theme }) => {
                 theme={theme}
               />
             </td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={time}
                 setInfo={setTime}
@@ -267,7 +267,7 @@ export const TableOfCalc = ({ theme }) => {
                 theme={theme}
               />
             </td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={time}
                 setInfo={setTime}
@@ -276,7 +276,7 @@ export const TableOfCalc = ({ theme }) => {
               />
             </td>
             <td>25 000 ₽</td>
-            <td>
+            <td className={s.editableInfoCol}>
               <EditableInfo
                 info={price}
                 setInfo={setPrice}

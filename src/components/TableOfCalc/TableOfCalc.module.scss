@@ -1,10 +1,12 @@
 @import "../../utils/varialables.scss";
 .container {
   min-height: 224px;
+  overflow: scroll;
 }
 
 .tableOfCalc {
   width: 100%;
+  width: 1920px;
   margin-top: 15px;
   padding: 15px;
   font-size: 14px;
@@ -32,4 +34,9 @@
       vertical-align: top;
     }
   }
+}
+
+.editableInfoCol {
+  text-align: right !important;
+  padding-right: 20px;
 }

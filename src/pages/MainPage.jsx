@@ -6,7 +6,7 @@ import { InfoOfCalc } from "../components/InfoOfCalc/InfoOfCalc";
 import { calcList, ordererList } from "../data/data";
 import { EditableInfo } from "../components/UI/editableInfo/EditableInfo";
 import { useState } from "react";
-import { TableOfCalc } from "../components/TableOfCalc/TableOfCalc";
+import { TableOfCalc } from "../components/TableOfCalc/tableOfCalc";
 
 export const MainPage = ({ theme }) => {
   const [price, setPrice] = useState("300 000 ₽");
@@ -127,7 +127,7 @@ export const MainPage = ({ theme }) => {
       <section className="main__middle">
         <Title theme={theme.theme}>Расчетная таблица тендерной сессии</Title>
 
-        <TableOfCalc theme={theme.theme}/>
+        <TableOfCalc theme={theme.theme} />
       </section>
 
       <section className="main__bottom">
@@ -136,13 +136,25 @@ export const MainPage = ({ theme }) => {
         </Title>
         <ul className="main__bottom__list">
           <li className="main__bottom__list__item">
-            <InfoCard head="Начальная максимальная цена" info={price} theme={theme.theme}/>
+            <InfoCard
+              head="Начальная максимальная цена"
+              info={price}
+              theme={theme.theme}
+            />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Процентная наценочнная ставка" info={percentage} theme={theme.theme}/>
+            <InfoCard
+              head="Процентная наценочнная ставка"
+              info={percentage}
+              theme={theme.theme}
+            />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Итоговая стоимость закупки" info={resultPriceBuy} theme={theme.theme}/>
+            <InfoCard
+              head="Итоговая стоимость закупки"
+              info={resultPriceBuy}
+              theme={theme.theme}
+            />
           </li>
           <li className="main__bottom__list__item">
             <InfoCard
@@ -152,16 +164,24 @@ export const MainPage = ({ theme }) => {
             />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Операционные расходы" info={spend} theme={theme.theme}/>
+            <InfoCard
+              head="Операционные расходы"
+              info={spend}
+              theme={theme.theme}
+            />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Расходы на доставку" info={spendDelivery} theme={theme.theme}/>
+            <InfoCard
+              head="Расходы на доставку"
+              info={spendDelivery}
+              theme={theme.theme}
+            />
           </li>
           <li className="main__bottom__list__item">
-            <InfoCard head="Дельта" info={delta} theme={theme.theme}/>
+            <InfoCard head="Дельта" info={delta} theme={theme.theme} />
           </li>
           <li className="main__bottom__list__item">
-            <DownloadButton theme={theme.theme}/>
+            <DownloadButton theme={theme.theme} />
           </li>
         </ul>
       </section>
