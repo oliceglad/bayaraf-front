@@ -1,4 +1,6 @@
 .editableInfo {
+  display: inline-flex;
+  width: min-content;
   &__info {
     display: inline-block;
     margin-right: 7px;
@@ -14,10 +16,24 @@
     width: 130px;
     font-size: 24px;
     background-color: transparent;
-    border: 1px solid white;
+    border: 1px solid transparent;
+
+    &:active,
+    &:focus-visible {
+      border: 1px solid white;
+    }
   }
 
   &__button {
     cursor: pointer;
+  }
+}
+
+.light {
+  border-color: transparent;
+
+  &:active,
+  &:focus-visible {
+    border-color: black;
   }
 }
