@@ -33,11 +33,13 @@ export const EditableInfo = ({ info, setInfo, theme, isSmall = false }) => {
           type="text"
           value={info}
           onChange={handleInputChange}
-          className={`${s.editableInfo__input} ${theme} ${theme === "light" ? s.light : ""}`}
+          className={`${s.editableInfo__input} ${theme} ${
+            theme === "light" ? s.light : ""
+          }`}
           onKeyDown={handleKeyDown}
           style={
             isSmall
-              ? {display: "inline-block", width: "50px", fontSize: "14px"}
+              ? { display: "inline-block", width: "90px", fontSize: "14px" }
               : {}
           }
         />
