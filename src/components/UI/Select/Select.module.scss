@@ -1,16 +1,19 @@
+@import '../../../utils/varialables.scss';
+
 .customSelect {
   position: relative;
-  width: 200px;
   cursor: pointer;
 }
 
 .customSelect__header {
+  height: 42px;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid $subtext-dark;
+  border-radius: 4px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 .customSelect__arrow {
@@ -24,14 +27,17 @@
   right: 0;
   max-height: 200px;
   overflow-y: auto;
-  border: 1px solid #ccc;
-  background-color: #fff;
   z-index: 1000;
 }
 
 .customSelect__list__item {
   padding: 10px;
   &:hover {
-    background-color: #f0f0f0;
+   opacity: .5;
   }
+}
+
+
+.isOpened {
+  transform: rotate(180deg);
 }

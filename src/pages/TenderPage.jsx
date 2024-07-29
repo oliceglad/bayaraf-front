@@ -58,7 +58,7 @@ export const TenderPage = ({ theme }) => {
             <Button
               style={{
                 backgroundColor: openTender.first ? "#0075FF" : theme.theme === "light" ? "white" : "#2B2F38",
-                color: theme.theme === "light" ? "#2B2F38" : "white",
+                color: openTender.first ? "white" : theme.theme === "light" ? "#2B2F38" : "white",
               }}
               onClickHandler={() =>
                 setOpenTender((prevState) => ({
