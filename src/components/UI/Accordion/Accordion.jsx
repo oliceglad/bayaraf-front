@@ -6,7 +6,7 @@ export const Accordion = ({
   isOpenedName,
   title,
   children,
-  toggle,
+  toggle = () => {},
 }) => {
   const toggleSection = (section) => {
     toggle((prevState) => ({
@@ -14,7 +14,7 @@ export const Accordion = ({
       [section]: !prevState[section],
     }));
   };
-  
+
   return (
     <div>
       <div
