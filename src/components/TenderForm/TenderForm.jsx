@@ -11,7 +11,6 @@ export const TenderForm = ({ theme, tenderObject = {} }) => {
         <Input type="text" placeholder="" theme={theme} />
       </div>
 
-      {/* TODO */}
       <div className={s.tenderForm__container}>
         <label className={s.tenderForm__label}>Тип тендерной сессии</label>
 
@@ -28,21 +27,102 @@ export const TenderForm = ({ theme, tenderObject = {} }) => {
           <label className={s.tenderForm__label}>
             Дата окончания подачи заявки
           </label>
-          <Input type="text" placeholder="" theme={theme} />
+          <div style={{ display: "flex" }}>
+            <Input
+              type="text"
+              placeholder=""
+              theme={theme}
+              style={{
+                width: "83px",
+                marginRight: "0px",
+                borderRadius: "4px 0px 0px 4px",
+              }}
+            />
+            <Input
+              type="text"
+              placeholder=""
+              theme={theme}
+              style={{ width: "83px", marginRight: "0px", borderRadius: "0px" }}
+            />
+            <Input
+              type="text"
+              placeholder=""
+              theme={theme}
+              style={{
+                width: "83px",
+                marginRight: "0px",
+                borderRadius: "0px 4px 4px 0px",
+              }}
+            />
+          </div>
         </div>
 
         <div className={s.tenderForm__container}>
           <label className={s.tenderForm__label}>
             Дата проведения аукциона
           </label>
-          <Input type="text" placeholder="" theme={theme} />
+          <div style={{ display: "flex" }}>
+            <Input
+              type="text"
+              placeholder=""
+              theme={theme}
+              style={{
+                width: "83px",
+                marginRight: "0px",
+                borderRadius: "4px 0px 0px 4px",
+              }}
+            />
+            <Input
+              type="text"
+              placeholder=""
+              theme={theme}
+              style={{ width: "83px", marginRight: "0px", borderRadius: "0px" }}
+            />
+            <Input
+              type="text"
+              placeholder=""
+              theme={theme}
+              style={{
+                width: "83px",
+                marginRight: "0px",
+                borderRadius: "0px 4px 4px 0px",
+              }}
+            />
+          </div>
         </div>
 
         <div className={s.tenderForm__container}>
           <label className={s.tenderForm__label}>
             Дата подведения итогов аукциона
           </label>
-          <Input type="text" placeholder="" theme={theme} />
+          <div style={{ display: "flex" }}>
+            <Input
+              type="text"
+              placeholder=""
+              theme={theme}
+              style={{
+                width: "83px",
+                marginRight: "0px",
+                borderRadius: "4px 0px 0px 4px",
+              }}
+            />
+            <Input
+              type="text"
+              placeholder=""
+              theme={theme}
+              style={{ width: "83px", marginRight: "0px", borderRadius: "0px" }}
+            />
+            <Input
+              type="text"
+              placeholder=""
+              theme={theme}
+              style={{
+                width: "83px",
+                marginRight: "0px",
+                borderRadius: "0px 4px 4px 0px",
+              }}
+            />
+          </div>
         </div>
       </div>
 
