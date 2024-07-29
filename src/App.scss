@@ -64,6 +64,59 @@
   }
 }
 
+
+.tender {
+  margin-top: 15px;
+
+  &__header {
+    display: flex;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 300;
+
+    & span {
+      margin-right: 15px;
+      & svg {
+        display: block;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__content {
+    padding: 15px;
+
+    &__info {
+      margin-left: 3px;
+      color: $subtext-dark;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: bold;
+
+    &__button {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 37px;
+      margin-right: 0px !important; 
+      padding: 0px !important;
+    }
+
+    & span {
+      margin-right: 15px;
+    }
+  }
+}
+
 .switch {
   position: relative;
   display: inline-block;

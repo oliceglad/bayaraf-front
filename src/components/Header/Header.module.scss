@@ -15,6 +15,18 @@
     &__logo {
       margin-left: 15px;
     }
+
+
+    &__list {
+      display: flex;
+      text-transform: uppercase;
+      align-items: center;
+
+
+      &__item {
+        margin-left: 30px;
+      }
+    }
   }
 
   &__right {
