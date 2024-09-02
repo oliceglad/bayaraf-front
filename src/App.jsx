@@ -7,6 +7,7 @@ import { FilterPage } from "./pages/FilterPage";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "./redux/themeAction";
 import { TenderPage } from "./pages/TenderPage";
+import { CatalogPage } from "./pages/CatalogPage";
 
 function App() {
   const theme = useSelector((state) => state.theme);
@@ -25,6 +26,7 @@ function App() {
           <Route path="/items" element={<ItemsPage theme={theme} />} />
           <Route path="/filters" element={<FilterPage theme={theme} />} />
           <Route path="/tenders" element={<TenderPage theme={theme} />} />
+          <Route path="/catalog" element={<CatalogPage theme={theme} />} />
           <Route path="*" element={<Navigate to="/main" />} />
         </Routes>
       </BrowserRouter>

@@ -152,42 +152,96 @@ export const items = [
 export const navItems = [
   {
     text: "Основные",
-    nav: "#main"
+    nav: "#main",
   },
   {
     text: "Рейтинг и обзоры",
-    nav: "#"
+    nav: "#",
   },
   {
     text: "Общие параметры",
-    nav: "#info"
+    nav: "#info",
   },
   {
     text: "Cпецификации Видеопроцессора",
-    nav: "#spec"
+    nav: "#spec",
   },
   {
     text: "Спецификации видеопамяти",
-    nav: "#"
+    nav: "#",
   },
   {
     text: "Вывод изображения",
-    nav: "#"
+    nav: "#",
   },
   {
     text: "Подключение",
-    nav: "#"
+    nav: "#",
   },
   {
     text: "Система охлаждения",
-    nav: "#"
+    nav: "#",
   },
   {
     text: "Дополнительно",
-    nav: "#"
+    nav: "#",
   },
   {
-    text:  "Габариты и вес",
-    nav: "#"
+    text: "Габариты и вес",
+    nav: "#",
+  },
+];
+
+import processor from "../assets/img/processor.png";
+import motherboard from "../assets/img/motherboard.png";
+import graphiccard from "../assets/img/graphiccard.png";
+import ram from "../assets/img/ram.png";
+import casee from "../assets/img/case.png";
+import energy from "../assets/img/energy.png";
+import cooler from "../assets/img/cooler.png";
+import ssd from "../assets/img/ssd.png";
+import hdd from "../assets/img/hdd.png";
+import screens from '../assets/img/screen.png'
+
+export const CatalogData = [
+  {
+    img: processor,
+    name: "Процессоры",
+  },
+  {
+    img: motherboard,
+    name: "Материнские платы",
+  },
+  {
+    img: graphiccard,
+    name: "Видеокарты",
+  },
+  {
+    img: ram,
+    name: "Оперативная \n память",
+  },
+  {
+    img: casee,
+    name: "Корпуса",
+  },
+  {
+    img: energy,
+    name: "Блоки питания",
+  },
+  {
+    img: cooler,
+    name: "Охлаждение",
+  },
+  {
+    img: ssd,
+    name: "SSD",
+  },
+  {
+    img: hdd,
+    name: "HDD",
+  },
+  {
+    img: screens,
+    name: "Мониторы",
   },
 ];

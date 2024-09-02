@@ -101,16 +101,16 @@ export const Header = ({ theme, handleThemeToggle }) => {
 
           <ul className={s.header__left__list}>
             <li className={s.header__left__list__item}>
+              <NavLink className={s.header__left__list__item__link} to="/catalog">
+                Каталог
+              </NavLink>
+            </li>
+            <li className={s.header__left__list__item}>
               <NavLink
                 className={s.header__left__list__item__link}
                 to="/tenders"
               >
                 Тендеры
-              </NavLink>
-            </li>
-            <li className={s.header__left__list__item}>
-              <NavLink className={s.header__left__list__item__link} to="/items">
-                Каталог
               </NavLink>
             </li>
           </ul>
