@@ -7,8 +7,7 @@ import energy from "../assets/img/energy.png";
 import cooler from "../assets/img/cooler.png";
 import ssd from "../assets/img/ssd.png";
 import hdd from "../assets/img/hdd.png";
-import screens from '../assets/img/screen.png'
-
+import screens from "../assets/img/screen.png";
 
 export const calcList = [
   {
@@ -241,8 +240,8 @@ export const CatalogData = [
     img: hdd,
     name: "HDD",
   },
-  {
-    img: screens,
-    name: "Мониторы",
-  },
+  // {
+  //   img: screens,
+  //   name: "Мониторы",
+  // },
 ];

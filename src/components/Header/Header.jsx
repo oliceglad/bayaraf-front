@@ -1,83 +1,111 @@
 import { NavLink, useLocation } from "react-router-dom";
 import s from "./Header.module.scss";
 import { Button } from "../UI/Button/Button";
+import { useState } from "react";
+import { Burger } from "../Burger/Burger";
 
 export const Header = ({ theme, handleThemeToggle }) => {
   const location = useLocation();
+  const [burgerVisible, setBurgerVisible] = useState(false);
 
   return (
     <div className={s.flex}>
+
+      <Burger isVisible={burgerVisible} theme={theme.theme}/>
       <header className={`${s.header} ${theme.theme}`}>
         <div className={s.header__left}>
-          <a className={s.header__left__rect} href="#">
-            <svg
-              width="20"
-              height="21"
-              viewBox="0 0 20 21"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                y="0.5"
-                width="4"
-                height="4"
-                fill={theme.theme === "light" ? "black" : "white"}
-              />
-              <rect
-                x="8"
-                y="0.5"
-                width="4"
-                height="4"
-                fill={theme.theme === "light" ? "black" : "white"}
-              />
-              <rect
-                x="16"
-                y="0.5"
-                width="4"
-                height="4"
-                fill={theme.theme === "light" ? "black" : "white"}
-              />
-              <rect
-                y="8.5"
-                width="4"
-                height="4"
-                fill={theme.theme === "light" ? "black" : "white"}
-              />
-              <rect
-                x="8"
-                y="8.5"
-                width="4"
-                height="4"
-                fill={theme.theme === "light" ? "black" : "white"}
-              />
-              <rect
-                x="16"
-                y="8.5"
-                width="4"
-                height="4"
-                fill={theme.theme === "light" ? "black" : "white"}
-              />
-              <rect
-                y="16.5"
-                width="4"
-                height="4"
-                fill={theme.theme === "light" ? "black" : "white"}
-              />
-              <rect
-                x="8"
-                y="16.5"
-                width="4"
-                height="4"
-                fill={theme.theme === "light" ? "black" : "white"}
-              />
-              <rect
-                x="16"
-                y="16.5"
-                width="4"
-                height="4"
-                fill={theme.theme === "light" ? "black" : "white"}
-              />
-            </svg>
+          <a
+            className={s.header__left__rect}
+            href="#"
+            onClick={() => setBurgerVisible(!burgerVisible)}
+          >
+            {burgerVisible ? (
+              <svg
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.16113 4.48956L3.98956 1.66113L18.8388 16.5104L16.0104 19.3388L1.16113 4.48956Z"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+                <path
+                  d="M1.16113 16.5104L16.0104 1.66113L18.8388 4.48956L3.98956 19.3388L1.16113 16.5104Z"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+              </svg>
+            ) : (
+              <svg
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  y="0.5"
+                  width="4"
+                  height="4"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+                <rect
+                  x="8"
+                  y="0.5"
+                  width="4"
+                  height="4"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+                <rect
+                  x="16"
+                  y="0.5"
+                  width="4"
+                  height="4"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+                <rect
+                  y="8.5"
+                  width="4"
+                  height="4"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+                <rect
+                  x="8"
+                  y="8.5"
+                  width="4"
+                  height="4"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+                <rect
+                  x="16"
+                  y="8.5"
+                  width="4"
+                  height="4"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+                <rect
+                  y="16.5"
+                  width="4"
+                  height="4"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+                <rect
+                  x="8"
+                  y="16.5"
+                  width="4"
+                  height="4"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+                <rect
+                  x="16"
+                  y="16.5"
+                  width="4"
+                  height="4"
+                  fill={theme.theme === "light" ? "black" : "white"}
+                />
+              </svg>
+            )}
           </a>
 
           <NavLink className={s.header__left__logo} to="/main">
@@ -101,7 +129,10 @@ export const Header = ({ theme, handleThemeToggle }) => {
 
           <ul className={s.header__left__list}>
             <li className={s.header__left__list__item}>
-              <NavLink className={s.header__left__list__item__link} to="/catalog">
+              <NavLink
+                className={s.header__left__list__item__link}
+                to="/catalog"
+              >
                 Каталог
               </NavLink>
             </li>
@@ -149,6 +180,7 @@ export const Header = ({ theme, handleThemeToggle }) => {
           <li className={s.header__buttons__item}>
             <Button
               style={{
+                padding: "13.5px 35px",
                 backgroundColor: "#0075FF",
                 marginRight: "0px",
               }}
@@ -159,6 +191,7 @@ export const Header = ({ theme, handleThemeToggle }) => {
           <li className={s.header__buttons__item}>
             <Button
               style={{
+                padding: "13.5px 35px",
                 backgroundColor: theme.theme === "light" ? "white" : "#2B2F38",
                 color: theme.theme === "light" ? "#2B2F38" : "white",
                 marginRight: "0px",
@@ -172,7 +205,7 @@ export const Header = ({ theme, handleThemeToggle }) => {
               style={{
                 display: "inline-block",
                 width: "45px",
-                height: "45px",
+                height: "42px",
                 padding: 0,
                 paddingTop: "10px",
                 marginRight: "0px",
