@@ -1,3 +1,15 @@
+import processor from "../assets/img/processor.png";
+import motherboard from "../assets/img/motherboard.png";
+import graphiccard from "../assets/img/graphiccard.png";
+import ram from "../assets/img/ram.png";
+import casee from "../assets/img/case.png";
+import energy from "../assets/img/energy.png";
+import cooler from "../assets/img/cooler.png";
+import ssd from "../assets/img/ssd.png";
+import hdd from "../assets/img/hdd.png";
+import screens from '../assets/img/screen.png'
+
+
 export const calcList = [
   {
     title: "Тип тендерной сессии: ",
@@ -191,17 +203,6 @@ export const navItems = [
     nav: "#",
   },
 ];
-
-import processor from "../assets/img/processor.png";
-import motherboard from "../assets/img/motherboard.png";
-import graphiccard from "../assets/img/graphiccard.png";
-import ram from "../assets/img/ram.png";
-import casee from "../assets/img/case.png";
-import energy from "../assets/img/energy.png";
-import cooler from "../assets/img/cooler.png";
-import ssd from "../assets/img/ssd.png";
-import hdd from "../assets/img/hdd.png";
-import screens from '../assets/img/screen.png'
 
 export const CatalogData = [
   {
